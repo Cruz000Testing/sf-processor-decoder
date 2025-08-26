@@ -10,7 +10,7 @@
 // Constantes de seguridad
 #define MAX_DECOMPRESSION_RATIO 10
 #define INITIAL_BUFFER_SIZE (1024 * 1024) // 1MB inicial
-#define MAX_BUFFER_SIZE (100 * 1024 * 1024) // 100MB máximo
+#define MAX_BUFFER_SIZE (200 * 1024 * 1024) // 200MB máximo
 
 // Estructura para manejar el estado de forma segura
 typedef struct {
