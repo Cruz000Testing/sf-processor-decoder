@@ -50,8 +50,8 @@ int safe_decompress_brotli(const uint8_t* compressed_data, size_t compressed_siz
         return 0;
     };
 
-    // Verificar ratio de descompresión máximo
-    if (compressed_size > MAX_BUFFER_SIZE / MAX_DECOMPRESSION_RATIO) {
+    // Permitir archivos comprimidos de hasta 50MB (que podrían descomprimirse a ~500MB)
+    if (compressed_size > 50 * 1024 * 1024) {
         set_error("Archivo comprimido demasiado grande para descomprimir de forma segura", 2);
         return 0;
     };
