@@ -149,7 +149,7 @@ void download_success(emscripten_fetch_t* fetch) {
     };
 
     double start_decompress = emscripten_get_now();
-    int success = safe_decompress_brotli(fetch->data, fetch->numBytes);
+    int success = safe_decompress_brotli((const uint8_t*)fetch->data, fetch->numBytes);
     g_state.decompress_time = emscripten_get_now() - start_decompress;
 
     if (success) {
