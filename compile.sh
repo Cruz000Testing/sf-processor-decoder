@@ -7,7 +7,7 @@ emcc -O3 \
     brotli/common/*.c \
     brotli/dec/*.c \
     -s WASM=1 \
-    -s ALLOW_MEMORY_GROWTH=0 \
+    -s ALLOW_MEMORY_GROWTH=1 \
     -s MAXIMUM_MEMORY=4GB \
     -s INITIAL_MEMORY=64MB \
     -s STACK_SIZE=5MB \
@@ -19,4 +19,5 @@ emcc -O3 \
     -s FILESYSTEM=0 \
     -s MODULARIZE=1 \
     -s EXPORT_ES6=1 \
+    -lfetch \
     -o soundfont.js
